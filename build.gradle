@@ -1,0 +1,42 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+apply plugin: 'java'
+
+group = 'xyz.tprj'
+version = '2.7'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+}
+
+
+dependencies {
+    compileOnly fileTree(dir: 'libs', include: ['*.jar']);
+}
+
+processResources {
+    duplicatesStrategy= DuplicatesStrategy.INCLUDE
+    from(sourceSets.main.resources.srcDirs) {
+        filter ReplaceTokens, tokens: [version: version]
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+javadoc {
+    options.charSet = 'UTF-8'
+    options.encoding = 'UTF-8'
+}

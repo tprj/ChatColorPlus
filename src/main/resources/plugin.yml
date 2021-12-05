@@ -1,0 +1,16 @@
+name: ChatColorPlus
+version: @version@
+main: xyz.tprj.chatcolorplus.ChatColorPlus
+api-version: 1.16
+authors: [TProject,Toto31010]
+softdepend: [PlaceholderAPI]
+commands:
+  nick:
+    permission: chatcolorplus.nick
+  color:
+    permission: chatcolorplus.color
+permissions:
+  chatcolorplus.chatcolor.hex:
+    default: true
+  chatcolorplus.nick:
+    default: true

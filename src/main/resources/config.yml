@@ -1,0 +1,15 @@
+joinmessage:
+  enable: true
+  message: "%#00ffff%%Player% joined the game!"
+quitmessage:
+  enable: true
+  message: "%#ff0000%%Player% left the game!"
+tabheader:
+  enable: true
+  period: 5
+  text:
+    - "%Green%Welcome to Our Network!"
+tabfooter:
+  enable: true
+  text:
+    - "%Aqua%mc.example.net"
